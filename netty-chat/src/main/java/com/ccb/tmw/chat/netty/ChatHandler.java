@@ -78,7 +78,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 		if (MsgActionEnum.SIGNED.type.equals(action)) {
             String[] msgIds = dataFrame.getExtend().split(",");
             for (int i = 0; i < msgIds.length ; i ++) {
-            	userService.signMsg(msgIds[i]);
+            	//userService.signMsg(msgIds[i]);
 			}
 		} else
 		//  2.4 心跳监测 1)前端的心跳 2)Netty的心跳
