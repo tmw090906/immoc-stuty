@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ccb.tmw.chat.mapper.CompleteSQLMapper">
+
+    <resultMap id="FriendsRequestMap" type="com.ccb.tmw.chat.model.vo.FriendsRequestVO">
+        <result column="send_user_id" jdbcType="VARCHAR" property="sendUserId" />
+        <result column="username" jdbcType="VARCHAR" property="sendUsername" />
+        <result column="nickname" jdbcType="VARCHAR" property="sendNickname" />
+        <result column="face_image" jdbcType="VARCHAR" property="sendFaceImage" />
+        <result column="face_image_big" jdbcType="VARCHAR" property="sendImageBig" />
+    </resultMap>
+
+
+    <select id="listFriendsRequest" resultMap="FriendsRequestMap"
+            parameterType="string">
+        SELECT
+        send_user_id,
+        username,
+        nickname,
+        face_image,
+        face_image_big
+        FROM friends_request requset LEFT JOIN users sender ON requset.send_user_id=sender.id
+        WHERE requset.accept_user_id=#{acceptId}
+    </select>
+
+    <resultMap id="MyFriendsMap" type="com.ccb.tmw.chat.model.vo.MyFriendsVO">
+        <result column="id" jdbcType="VARCHAR" property="friendsUserId" />
+        <result column="username" jdbcType="VARCHAR" property="friendsUsername" />
+        <result column="nickname" jdbcType="VARCHAR" property="friendsNickname" />
+        <result column="face_image" jdbcType="VARCHAR" property="friendsFaceImg" />
+    </resultMap>
+
+    <select id="listFriends" resultMap="MyFriendsMap" parameterType="string">
+        SELECT
+        u.id,
+        username,
+        nickname,
+        face_image
+        FROM my_friends f LEFT JOIN users u ON u.id=f.my_friend_user_id
+        WHERE f.my_user_id=#{userId}
+    </select>
+
+</mapper>
