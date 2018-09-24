@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../hello-netty/hello-netty.iml" filepath="$PROJECT_DIR$/../hello-netty/hello-netty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lambda/lambda.iml" filepath="$PROJECT_DIR$/lambda/lambda.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty-chat/netty-chat.iml" filepath="$PROJECT_DIR$/netty-chat/netty-chat.iml" />
     </modules>
   </component>
