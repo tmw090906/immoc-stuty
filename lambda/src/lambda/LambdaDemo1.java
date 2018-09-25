@@ -6,6 +6,7 @@ package lambda;
  * 1. lambda表达式, 实际上返回的是一个 单抽象方法 的接口
  * 2. @FcuntionalInterface 注解, 可以在编译期检测函数式接口是否编写正确
  * 3. 接口可以实现默认的方法
+ * 4. 接口可以实现静态方法
  */
 public class LambdaDemo1 {
 
