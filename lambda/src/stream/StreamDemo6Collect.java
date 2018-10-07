@@ -29,7 +29,11 @@ public class StreamDemo6Collect {
 
 
         // 得到所有学生的年龄列表
-        // s -> s.getAge() --> Student:getAge ,不会多生成类似lambda$0这样的函数
+        // s -> s.getAge() --> Student::getAge ,不会多生成类似lambda$0这样的函数
+        // 实际上这里的调用逻辑为, 将流中的Student对象, 作为参数传入了getAge方法
+        // 类似 s -> s.getAge(s) 所以可以直接调用Student::getAge
+        // 因为java的非静态方法实现和python类似
+        // 编译后的字节码是将该对象作为第一个参数, 调用非静态方法
         Set<Integer> ages = students.stream()
                 .map(Student::getAge)
                 .collect(Collectors.toCollection(TreeSet::new));

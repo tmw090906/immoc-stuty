@@ -10,7 +10,6 @@ public class StreamWordDemo {
 
     public static void main(String[] args) throws IOException {
 
-
         // try-resource 关闭资源
         try (BufferedReader reader = new BufferedReader(
                 new FileReader("E:\\dev\\workspace\\imooc-study\\lambda\\src\\webflux.txt"))) {
@@ -35,7 +34,6 @@ public class StreamWordDemo {
 
             System.out.println("单词数:" + wordCount);
         }
-
 
         // try-resource 关闭资源
         try (BufferedReader reader = new BufferedReader(

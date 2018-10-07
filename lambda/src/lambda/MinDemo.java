@@ -6,7 +6,7 @@ public class MinDemo {
 
 
     public static void main(String[] args) {
-        int[] nums = {32,412,123,32,-2,213,1,2,42};
+        int[] nums = {32,412,123,32,2,213,42};
 
         /**
          * 命令式编程
@@ -26,7 +26,7 @@ public class MinDemo {
          * jdk1.8之后
          * 函数式编程
          */
-        int minNum = IntStream.of(nums).parallel().max().getAsInt();
+        int minNum = IntStream.of(nums).parallel().min().getAsInt();
 
         System.out.println(minNum);
 
