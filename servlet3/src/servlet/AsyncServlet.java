@@ -17,8 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class AsyncServlet extends javax.servlet.http.HttpServlet {
 
     protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response)
-            throws ServletException, IOException {
+                          HttpServletResponse response) {
 
         doGet(request, response);
 
@@ -33,7 +32,6 @@ public class AsyncServlet extends javax.servlet.http.HttpServlet {
 
         CompletableFuture.runAsync( () ->
                 doSomeThing(context,
-                        context.getRequest(),
                         context.getResponse()));
 
         System.out.println("sync use:" + (System.currentTimeMillis() - startTime));
@@ -41,7 +39,6 @@ public class AsyncServlet extends javax.servlet.http.HttpServlet {
     }
 
     private void doSomeThing(AsyncContext context,
-                             ServletRequest request,
                              ServletResponse response) {
         // 模拟耗时操作
         try {

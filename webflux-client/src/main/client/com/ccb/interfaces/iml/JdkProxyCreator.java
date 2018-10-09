@@ -39,7 +39,7 @@ public class JdkProxyCreator implements ProxyCreator {
                 new InvocationHandler() {
 
                     @Override
-                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                    public Object invoke(Object proxy, Method method, Object[] args) {
                         MethodInfo methodInfo = extractMethodInfo(method, args);
                         log.info("methodInfo:" + methodInfo);
                         // 返回动态代理
