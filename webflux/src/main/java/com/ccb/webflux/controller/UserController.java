@@ -91,7 +91,7 @@ public class UserController {
     public Mono<ResponseEntity<User>> updateUser(
             @PathVariable("id") String id,
             @Valid @RequestBody User user) {
-        
+
         return this.userRepository.findById(id)
                 // 先使用flatMap 对
                 // userRepository.findById(id)返回的Mono<User> 中的User进行操作

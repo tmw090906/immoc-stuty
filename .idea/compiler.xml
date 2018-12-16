@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hadoop-study" />
         <module name="hello-netty" />
         <module name="netty-chat" />
         <module name="webflux" />
-        <module name="webflux-client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="hadoop-study" target="1.8" />
       <module name="hello-netty" target="1.8" />
       <module name="netty-chat" target="1.8" />
       <module name="netty-hello" target="1.8" />

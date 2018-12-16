@@ -131,9 +131,7 @@ public class JdkProxyCreator implements ProxyCreator {
                             if (annoBody != null) {
                                 methodInfo.setBody((Mono<?>) args[i]);
                                 methodInfo.setBodyType(
-                                        this.extractElementType(
-                                                parameters[i].getParameterizedType()
-                                                )
+                                        this.extractElementType(parameters[i].getParameterizedType())
                                 );
                             }
                         }
