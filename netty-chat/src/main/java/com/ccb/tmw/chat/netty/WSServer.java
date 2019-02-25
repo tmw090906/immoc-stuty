@@ -39,7 +39,7 @@ public class WSServer {
 
     public void start() {
         this.future = server.bind(8088);
-        System.err.println("netty websocket server startup");
+        System.err.println("netty websocket response startup");
     }
 
 

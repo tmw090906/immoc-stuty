@@ -18,7 +18,7 @@ import java.net.URI;
  */
 public class HDFSApp {
 
-    public static final String HDFS_PATH = "hdfs://192.168.119.134:8020";
+    public static final String HDFS_PATH = "hdfs://lenovo100master:8020";
 
     private FileSystem fileSystem = null;
 
@@ -53,7 +53,7 @@ public class HDFSApp {
      */
     @Test
     public void cat() throws Exception {
-        FSDataInputStream inputStream = fileSystem.open(new Path("/test/Hello-Hadoop.txt"));
+        FSDataInputStream inputStream = fileSystem.open(new Path("/test/Hello-Hadoop-rename.txt"));
         IOUtils.copyBytes(inputStream, System.out, 1024);
         inputStream.close();
     }
@@ -72,11 +72,19 @@ public class HDFSApp {
 
     // TODO : copyFromLocal copyFromLoaclProgress copyToLoacl delete
 
+    @Test
+    public void copyFromLocal() throws Exception {
+        Path localPath = new Path("E:\\TempDownload\\[7sht.me]meyd-425\\meyd-425.mp4");
+        Path hdfsPath = new Path("/hdfsapi/test");
+        fileSystem.copyFromLocalFile(localPath, hdfsPath);
+    }
+
+
 
     @Before
     public void setUp() throws Exception {
         configuration = new Configuration();
-        fileSystem = FileSystem.get(new URI(HDFS_PATH), configuration, "hbase");
+        fileSystem = FileSystem.get(new URI(HDFS_PATH), configuration, "tianmw");
     }
 
 

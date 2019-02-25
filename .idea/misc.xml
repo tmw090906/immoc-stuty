@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/webflux/pom.xml" />
         <option value="$PROJECT_DIR$/webflux-client/pom.xml" />
         <option value="$PROJECT_DIR$/hadoop-study/pom.xml" />
+        <option value="$PROJECT_DIR$/netty-study/pom.xml" />
       </list>
     </option>
   </component>

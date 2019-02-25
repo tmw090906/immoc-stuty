@@ -36,7 +36,7 @@ public class StreamDemo5Parallel {
         // 使用以下参数修改默认并行流线程数
         /**
         System.setProperty(
-                "java.util.concurrent.ForkJoinPool.common.parallelism",
+                "java.utils.concurrent.ForkJoinPool.common.parallelism",
                 "10");
         IntStream.rangeClosed(1, 200)
                 .parallel()
