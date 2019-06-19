@@ -1,8 +1,6 @@
 package servlet;
 
 import javax.servlet.AsyncContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +14,8 @@ import java.util.concurrent.TimeUnit;
             asyncSupported = true)
 public class AsyncServlet extends javax.servlet.http.HttpServlet {
 
+    private static final long serialVersionUID = 5023973283687669309L;
+
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) {
 
@@ -25,7 +25,7 @@ public class AsyncServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) {
-        Long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
 
         // 开启异步
         AsyncContext context = request.startAsync();
